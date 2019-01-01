@@ -7,8 +7,6 @@ ENV APP_PATH=/app
 ENV WORK_PATH=/verilog
 
 WORKDIR ${APP_PATH}
-# To speed up apt-get
-RUN sed -i~ -e 's/archive.ubuntu.com/ftp.jaist.ac.jp/' /etc/apt/sources.list
 
 RUN apt-get update -y && \
   apt-get install -y git build-essential autoconf gperf flex bison && \
